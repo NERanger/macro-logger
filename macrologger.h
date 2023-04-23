@@ -95,6 +95,14 @@ static inline char *timenow();
 #define LOG_IF_ERROR(condition, message, args...)
 #endif
 
+#define ASSERT(cond) \
+    do{ \
+        if(!(cond)){ \
+            printf("ASSERTION FAILED: (%s), function %s, file %s, line %d\n", #cond, __FUNCTION__, _FILE, __LINE__); \
+            abort(); \
+        } \
+    }while(0)
+
 static inline char *timenow() {
     static char buffer[64];
     time_t rawtime;

@@ -65,6 +65,8 @@ LOG_ERROR(message, arguments);
 
 LOG_IF_ERROR(condition, message, arguments);
 
+ASSERT(condition)
+
 ```
 
 ### Examples
@@ -84,6 +86,9 @@ LOG_ERROR(@"%@ we have a problem!", baseStation);
 
 int going_down = 1;
 LOG_IF_ERROR(going_down, "i'm going down... if only i had used macro-logger...");
+
+// runtime assert
+ASSERT(false)
 
 ```
 
